@@ -8,12 +8,15 @@
     name="description"
     content="On-site clinical support and flexible workflow assistance for clinics, med spas, wellness centers and concierge practices. Pay-per-use, no long-term staffing commitments."
   />
+
+  <!-- Google Font -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link
     href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
     rel="stylesheet"
   />
+
   <style>
     :root {
       --bg: #050816;
@@ -27,7 +30,13 @@
       --card-radius: 18px;
       --shadow-soft: 0 18px 45px rgba(15, 23, 42, 0.55);
     }
-    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
     body {
       font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
       background: radial-gradient(circle at top, #0b1220 0%, #020617 42%, #020617 100%);
@@ -35,198 +44,483 @@
       line-height: 1.6;
       -webkit-font-smoothing: antialiased;
     }
-    a { color: inherit; text-decoration: none; }
-    .page { min-height: 100vh; display: flex; flex-direction: column; }
-    .container { width: 100%; max-width: 1100px; margin: 0 auto; padding: 0 1.25rem; }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .page {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 1.25rem;
+    }
+
+    /* NAVBAR */
     .nav {
-      position: sticky; top: 0; z-index: 20;
+      position: sticky;
+      top: 0;
+      z-index: 20;
       backdrop-filter: blur(14px);
-      background: linear-gradient(to bottom, rgba(2, 6, 23, 0.95), rgba(2, 6, 23, 0.82), transparent);
+      background: linear-gradient(
+        to bottom,
+        rgba(2, 6, 23, 0.95),
+        rgba(2, 6, 23, 0.82),
+        transparent
+      );
       border-bottom: 1px solid rgba(148, 163, 184, 0.18);
     }
-    .nav-inner { display: flex; align-items: center; justify-content: space-between; padding: 0.9rem 0; }
-    .nav-brand { display: flex; align-items: center; gap: 0.55rem; }
+
+    .nav-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0.9rem 0;
+    }
+
+    .nav-brand {
+      display: flex;
+      align-items: center;
+      gap: 0.55rem;
+    }
+
     .nav-logo {
-      width: 32px; height: 32px; border-radius: 999px;
+      width: 32px;
+      height: 32px;
+      border-radius: 999px;
       background: radial-gradient(circle at 30% 30%, #38bdf8, #0ea5e9 45%, #0369a1 100%);
       box-shadow: 0 0 0 1px rgba(15, 23, 42, 0.8), 0 10px 25px rgba(15, 23, 42, 0.9);
-      position: relative; overflow: hidden;
+      position: relative;
+      overflow: hidden;
     }
+
     .nav-logo::after {
-      content: ""; position: absolute; inset: 7px; border-radius: inherit;
+      content: "";
+      position: absolute;
+      inset: 7px;
+      border-radius: inherit;
       border: 2px solid rgba(15, 23, 42, 0.75);
     }
-    .nav-title { font-size: 0.98rem; font-weight: 600; letter-spacing: 0.02em; }
-    .nav-subtitle { font-size: 0.7rem; color: var(--text-muted); }
-    .nav-actions { display: flex; align-items: center; gap: 0.5rem; font-size: 0.8rem; }
+
+    .nav-title {
+      font-size: 0.98rem;
+      font-weight: 600;
+      letter-spacing: 0.02em;
+    }
+
+    .nav-subtitle {
+      font-size: 0.7rem;
+      color: var(--text-muted);
+    }
+
+    .nav-actions {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 0.8rem;
+    }
+
     .badge-pill {
-      border-radius: 999px; padding: 0.25rem 0.7rem;
+      border-radius: 999px;
+      padding: 0.25rem 0.7rem;
       border: 1px solid rgba(148, 163, 184, 0.4);
-      color: var(--text-muted); display: flex; align-items: center; gap: 0.25rem;
+      color: var(--text-muted);
+      display: flex;
+      align-items: center;
+      gap: 0.25rem;
     }
-    .badge-pill span { font-size: 0.75rem; }
+
+    .badge-pill span {
+      font-size: 0.75rem;
+    }
+
     .nav-call-btn {
-      border-radius: 999px; padding: 0.32rem 0.9rem;
-      background: var(--accent); color: #0f172a; font-weight: 600;
-      display: inline-flex; align-items: center; gap: 0.35rem;
+      border-radius: 999px;
+      padding: 0.32rem 0.9rem;
+      background: var(--accent);
+      color: #0f172a;
+      font-weight: 600;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
       box-shadow: 0 12px 30px rgba(56, 189, 248, 0.35);
-      border: none; cursor: pointer; font-size: 0.8rem;
+      border: none;
+      cursor: pointer;
+      font-size: 0.8rem;
     }
-    .nav-call-btn span { font-size: 0.9rem; }
-    .hero { padding: 3.5rem 0 2.5rem; }
+
+    .nav-call-btn span {
+      font-size: 0.9rem;
+    }
+
+    /* HERO */
+    .hero {
+      padding: 3.5rem 0 2.5rem;
+    }
+
     .hero-grid {
-      display: grid; grid-template-columns: minmax(0, 3fr) minmax(0, 2.8fr);
-      gap: 2.25rem; align-items: center;
+      display: grid;
+      grid-template-columns: minmax(0, 3fr) minmax(0, 2.8fr);
+      gap: 2.25rem;
+      align-items: center;
     }
+
     .hero-kicker {
-      display: inline-flex; align-items: center; gap: 0.6rem;
-      font-size: 0.78rem; color: var(--accent);
+      display: inline-flex;
+      align-items: center;
+      gap: 0.6rem;
+      font-size: 0.78rem;
+      color: var(--accent);
       padding: 0.18rem 0.7rem 0.18rem 0.18rem;
       border-radius: 999px;
       background: rgba(15, 23, 42, 0.9);
       border: 1px solid rgba(56, 189, 248, 0.35);
       margin-bottom: 0.9rem;
     }
+
     .hero-kicker-pill {
-      display: inline-flex; align-items: center; justify-content: center;
-      width: 22px; height: 22px; border-radius: 999px;
-      background: var(--accent); color: #0f172a; font-size: 0.9rem; font-weight: 700;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 22px;
+      height: 22px;
+      border-radius: 999px;
+      background: var(--accent);
+      color: #0f172a;
+      font-size: 0.9rem;
+      font-weight: 700;
     }
+
     .hero-title {
       font-size: clamp(1.9rem, 3.1vw, 2.5rem);
-      line-height: 1.1; font-weight: 700; letter-spacing: 0.01em;
+      line-height: 1.1;
+      font-weight: 700;
+      letter-spacing: 0.01em;
       margin-bottom: 0.75rem;
     }
+
     .hero-title span {
       background: linear-gradient(to right, #38bdf8, #a855f7);
-      -webkit-background-clip: text; color: transparent;
+      -webkit-background-clip: text;
+      color: transparent;
     }
+
     .hero-subtitle {
-      font-size: 0.96rem; color: var(--text-muted);
-      max-width: 36rem; margin-bottom: 1.4rem;
+      font-size: 0.96rem;
+      color: var(--text-muted);
+      max-width: 36rem;
+      margin-bottom: 1.4rem;
     }
-    .hero-subtitle strong { color: #e5e7eb; font-weight: 500; }
-    .hero-actions { display: flex; flex-wrap: wrap; gap: 0.7rem; margin-bottom: 1.1rem; }
+
+    .hero-subtitle strong {
+      color: #e5e7eb;
+      font-weight: 500;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.7rem;
+      margin-bottom: 1.1rem;
+    }
+
     .btn {
-      display: inline-flex; align-items: center; justify-content: center; gap: 0.45rem;
-      font-size: 0.9rem; padding: 0.75rem 1.3rem; border-radius: 999px;
-      border: 1px solid transparent; cursor: pointer; font-weight: 500;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.45rem;
+      font-size: 0.9rem;
+      padding: 0.75rem 1.3rem;
+      border-radius: 999px;
+      border: 1px solid transparent;
+      cursor: pointer;
+      font-weight: 500;
       text-decoration: none;
       transition: transform 0.12s ease-out, box-shadow 0.12s ease-out, background 0.12s ease-out,
         border-color 0.12s ease-out;
       white-space: nowrap;
     }
+
     .btn-primary {
       background: linear-gradient(to right, #38bdf8, #0ea5e9);
-      color: #0f172a; box-shadow: 0 16px 40px rgba(56, 189, 248, 0.4);
+      color: #0f172a;
+      box-shadow: 0 16px 40px rgba(56, 189, 248, 0.4);
     }
+
     .btn-outline {
       background: radial-gradient(circle at top left, rgba(56, 189, 248, 0.1), transparent 55%);
-      border-color: rgba(148, 163, 184, 0.55); color: var(--text-main);
+      border-color: rgba(148, 163, 184, 0.55);
+      color: var(--text-main);
     }
+
     .btn:hover {
       transform: translateY(-1px) translateZ(0);
       box-shadow: 0 18px 50px rgba(15, 23, 42, 0.8);
     }
-    .btn-icon { font-size: 1rem; }
-    .hero-footnote { font-size: 0.76rem; color: var(--text-muted); }
-    .hero-footnote span { color: var(--accent); font-weight: 500; }
+
+    .btn-icon {
+      font-size: 1rem;
+    }
+
+    .hero-footnote {
+      font-size: 0.76rem;
+      color: var(--text-muted);
+    }
+
+    .hero-footnote span {
+      color: var(--accent);
+      font-weight: 500;
+    }
+
+    /* HERO CARD */
     .hero-card {
       background: radial-gradient(circle at top left, #0f172a, #020617 55%);
       border-radius: calc(var(--card-radius) + 4px);
       padding: 1.5rem 1.4rem;
       border: 1px solid var(--border-subtle);
-      box-shadow: var(--shadow-soft); position: relative; overflow: hidden;
+      box-shadow: var(--shadow-soft);
+      position: relative;
+      overflow: hidden;
     }
+
     .hero-card::before {
-      content: ""; position: absolute; inset: -25%;
-      background: radial-gradient(circle at top, rgba(56, 189, 248, 0.12), transparent 60%);
-      opacity: 0.9; pointer-events: none;
+      content: "";
+      position: absolute;
+      inset: -25%;
+      background: radial-gradient(
+        circle at top,
+        rgba(56, 189, 248, 0.12),
+        transparent 60%
+      );
+      opacity: 0.9;
+      pointer-events: none;
     }
-    .hero-card-inner { position: relative; z-index: 1; }
+
+    .hero-card-inner {
+      position: relative;
+      z-index: 1;
+    }
+
     .status-pill {
-      display: inline-flex; align-items: center; gap: 0.4rem;
-      padding: 0.2rem 0.7rem; border-radius: 999px;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      padding: 0.2rem 0.7rem;
+      border-radius: 999px;
       background: rgba(15, 23, 42, 0.9);
       border: 1px solid rgba(56, 189, 248, 0.4);
-      font-size: 0.72rem; margin-bottom: 0.9rem;
+      font-size: 0.72rem;
+      margin-bottom: 0.9rem;
     }
+
     .status-dot {
-      width: 7px; height: 7px; border-radius: 999px;
-      background: #4ade80; box-shadow: 0 0 0 5px rgba(74, 222, 128, 0.18);
+      width: 7px;
+      height: 7px;
+      border-radius: 999px;
+      background: #4ade80;
+      box-shadow: 0 0 0 5px rgba(74, 222, 128, 0.18);
     }
-    .status-pill span { color: #e5e7eb; }
-    .ai-title { font-size: 0.95rem; font-weight: 600; margin-bottom: 0.4rem; }
-    .ai-sub { font-size: 0.8rem; color: var(--text-muted); margin-bottom: 0.8rem; }
-    .ai-line { font-size: 0.88rem; margin-bottom: 0.9rem; }
-    .ai-line a { color: var(--accent); font-weight: 600; }
+
+    .status-pill span {
+      color: #e5e7eb;
+    }
+
+    .ai-title {
+      font-size: 0.95rem;
+      font-weight: 600;
+      margin-bottom: 0.4rem;
+    }
+
+    .ai-sub {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      margin-bottom: 0.8rem;
+    }
+
+    .ai-line {
+      font-size: 0.88rem;
+      margin-bottom: 0.9rem;
+    }
+
+    .ai-line a {
+      color: var(--accent);
+      font-weight: 600;
+    }
+
     .ai-meta {
-      display: grid; grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 0.6rem; margin-bottom: 1rem; font-size: 0.75rem;
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 0.6rem;
+      margin-bottom: 1rem;
+      font-size: 0.75rem;
     }
+
     .ai-meta-item {
-      background: rgba(15, 23, 42, 0.85); border-radius: 12px;
-      padding: 0.6rem 0.7rem; border: 1px solid rgba(148, 163, 184, 0.35);
+      background: rgba(15, 23, 42, 0.85);
+      border-radius: 12px;
+      padding: 0.6rem 0.7rem;
+      border: 1px solid rgba(148, 163, 184, 0.35);
     }
+
     .ai-meta-label {
-      color: var(--text-muted); font-size: 0.72rem; margin-bottom: 0.2rem;
+      color: var(--text-muted);
+      font-size: 0.72rem;
+      margin-bottom: 0.2rem;
     }
-    .ai-meta-value { color: #e5e7eb; font-weight: 500; font-size: 0.78rem; }
+
+    .ai-meta-value {
+      color: #e5e7eb;
+      font-weight: 500;
+      font-size: 0.78rem;
+    }
+
     .ai-tagline {
-      font-size: 0.74rem; color: var(--text-muted);
-      display: flex; align-items: center; gap: 0.3rem;
+      font-size: 0.74rem;
+      color: var(--text-muted);
+      display: flex;
+      align-items: center;
+      gap: 0.3rem;
     }
-    .ai-tagline span { font-size: 0.9rem; }
-    .section { padding: 1.7rem 0 1.8rem; }
-    .section-header { display: flex; flex-direction: column; gap: 0.35rem; margin-bottom: 1.3rem; }
+
+    .ai-tagline span {
+      font-size: 0.9rem;
+    }
+
+    /* SECTIONS */
+    .section {
+      padding: 1.7rem 0 1.8rem;
+    }
+
+    .section-header {
+      display: flex;
+      flex-direction: column;
+      gap: 0.35rem;
+      margin-bottom: 1.3rem;
+    }
+
     .section-kicker {
-      font-size: 0.78rem; text-transform: uppercase;
-      letter-spacing: 0.12em; color: var(--accent); font-weight: 600;
+      font-size: 0.78rem;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: var(--accent);
+      font-weight: 600;
     }
-    .section-title { font-size: 1.2rem; font-weight: 600; }
-    .section-description { font-size: 0.9rem; color: var(--text-muted); max-width: 34rem; }
+
+    .section-title {
+      font-size: 1.2rem;
+      font-weight: 600;
+    }
+
+    .section-description {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      max-width: 34rem;
+    }
+
+    /* “Why” section */
     .why-grid {
-      display: grid; grid-template-columns: minmax(0, 3fr) minmax(0, 2.6fr);
+      display: grid;
+      grid-template-columns: minmax(0, 3fr) minmax(0, 2.6fr);
       gap: 1.5rem;
     }
-    .pill-list { display: flex; flex-wrap: wrap; gap: 0.55rem; margin-bottom: 0.9rem; }
+
+    .pill-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.55rem;
+      margin-bottom: 0.9rem;
+    }
+
     .pill {
-      padding: 0.25rem 0.65rem; border-radius: 999px;
+      padding: 0.25rem 0.65rem;
+      border-radius: 999px;
       border: 1px solid rgba(148, 163, 184, 0.4);
-      font-size: 0.78rem; color: var(--text-muted);
+      font-size: 0.78rem;
+      color: var(--text-muted);
       background: rgba(15, 23, 42, 0.9);
     }
-    .check-list { list-style: none; font-size: 0.86rem; color: var(--text-muted); }
-    .check-list li { display: flex; gap: 0.45rem; margin-bottom: 0.45rem; }
-    .check-icon { color: #4ade80; font-size: 1rem; margin-top: 0.05rem; }
+
+    .check-list {
+      list-style: none;
+      font-size: 0.86rem;
+      color: var(--text-muted);
+    }
+
+    .check-list li {
+      display: flex;
+      gap: 0.45rem;
+      margin-bottom: 0.45rem;
+    }
+
+    .check-icon {
+      color: #4ade80;
+      font-size: 1rem;
+      margin-top: 0.05rem;
+    }
+
     .mini-card {
       background: rgba(15, 23, 42, 0.95);
       border-radius: var(--card-radius);
-      padding: 1rem; border: 1px solid var(--border-subtle);
+      padding: 1rem;
+      border: 1px solid var(--border-subtle);
       box-shadow: 0 10px 28px rgba(15, 23, 42, 0.7);
-      font-size: 0.82rem; color: var(--text-muted);
+      font-size: 0.82rem;
+      color: var(--text-muted);
     }
-    .mini-card strong { color: #e5e7eb; }
+
+    .mini-card strong {
+      color: #e5e7eb;
+    }
+
+    /* How it works */
     .steps-grid {
-      display: grid; grid-template-columns: repeat(auto-fit, minmax(185px, 1fr));
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(185px, 1fr));
       gap: 0.9rem;
     }
+
     .step-card {
       background: rgba(15, 23, 42, 0.96);
       border-radius: var(--card-radius);
       padding: 0.9rem 0.95rem;
       border: 1px solid rgba(148, 163, 184, 0.35);
-      font-size: 0.83rem; position: relative; overflow: hidden;
+      font-size: 0.83rem;
+      position: relative;
+      overflow: hidden;
     }
+
     .step-number {
-      width: 24px; height: 24px; border-radius: 999px;
-      display: inline-flex; align-items: center; justify-content: center;
+      width: 24px;
+      height: 24px;
+      border-radius: 999px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
       background: rgba(56, 189, 248, 0.18);
       border: 1px solid rgba(56, 189, 248, 0.6);
-      font-size: 0.8rem; color: var(--accent); margin-bottom: 0.5rem;
+      font-size: 0.8rem;
+      color: var(--accent);
+      margin-bottom: 0.5rem;
     }
-    .step-title { font-weight: 600; font-size: 0.86rem; margin-bottom: 0.25rem; }
-    .step-text { color: var(--text-muted); }
+
+    .step-title {
+      font-weight: 600;
+      font-size: 0.86rem;
+      margin-bottom: 0.25rem;
+    }
+
+    .step-text {
+      color: var(--text-muted);
+    }
+
+    /* CONTACT */
     .contact-card {
       background: radial-gradient(circle at top left, rgba(56, 189, 248, 0.15), #020617 62%);
       border-radius: calc(var(--card-radius) + 4px);
@@ -235,74 +529,206 @@
       box-shadow: var(--shadow-soft);
       display: grid;
       grid-template-columns: minmax(0, 1.5fr) minmax(0, 2fr);
-      gap: 1.4rem; align-items: flex-start;
+      gap: 1.4rem;
+      align-items: flex-start;
     }
-    .contact-intro-title { font-size: 1rem; font-weight: 600; margin-bottom: 0.25rem; }
-    .contact-intro-text { font-size: 0.86rem; color: var(--text-muted); margin-bottom: 0.7rem; }
+
+    .contact-intro-title {
+      font-size: 1rem;
+      font-weight: 600;
+      margin-bottom: 0.25rem;
+    }
+
+    .contact-intro-text {
+      font-size: 0.86rem;
+      color: var(--text-muted);
+      margin-bottom: 0.7rem;
+    }
+
     .contact-ai-box {
-      background: rgba(15, 23, 42, 0.9); border-radius: 14px;
-      padding: 0.8rem 0.85rem; border: 1px dashed rgba(148, 163, 184, 0.7);
-      font-size: 0.8rem; margin-bottom: 0.65rem;
+      background: rgba(15, 23, 42, 0.9);
+      border-radius: 14px;
+      padding: 0.8rem 0.85rem;
+      border: 1px dashed rgba(148, 163, 184, 0.7);
+      font-size: 0.8rem;
+      margin-bottom: 0.65rem;
     }
-    .contact-ai-label { font-size: 0.75rem; color: var(--text-muted); margin-bottom: 0.1rem; }
-    .contact-ai-number { font-weight: 600; }
-    .contact-ai-number a { color: var(--accent); }
+
+    .contact-ai-label {
+      font-size: 0.75rem;
+      color: var(--text-muted);
+      margin-bottom: 0.1rem;
+    }
+
+    .contact-ai-number {
+      font-weight: 600;
+    }
+
+    .contact-ai-number a {
+      color: var(--accent);
+    }
+
     .contact-ai-note {
-      font-size: 0.75rem; color: var(--text-muted); margin-top: 0.2rem;
+      font-size: 0.75rem;
+      color: var(--text-muted);
+      margin-top: 0.2rem;
     }
-    .contact-list { list-style: none; font-size: 0.78rem; color: var(--text-muted); margin-top: 0.5rem; }
-    .contact-list li { display: flex; gap: 0.4rem; margin-bottom: 0.3rem; }
-    .contact-dot { font-size: 0.8rem; margin-top: 0.05rem; }
+
+    .contact-list {
+      list-style: none;
+      font-size: 0.78rem;
+      color: var(--text-muted);
+      margin-top: 0.5rem;
+    }
+
+    .contact-list li {
+      display: flex;
+      gap: 0.4rem;
+      margin-bottom: 0.3rem;
+    }
+
+    .contact-dot {
+      font-size: 0.8rem;
+      margin-top: 0.05rem;
+    }
+
     .contact-form {
-      display: grid; grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 0.75rem; font-size: 0.82rem;
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 0.75rem;
+      font-size: 0.82rem;
     }
-    .form-field { display: flex; flex-direction: column; gap: 0.2rem; }
-    .form-field.full { grid-column: 1 / -1; }
-    label { font-size: 0.74rem; color: var(--text-muted); }
-    input, textarea {
-      background: rgba(15, 23, 42, 0.9); border-radius: 10px;
+
+    .form-field {
+      display: flex;
+      flex-direction: column;
+      gap: 0.2rem;
+    }
+
+    .form-field.full {
+      grid-column: 1 / -1;
+    }
+
+    label {
+      font-size: 0.74rem;
+      color: var(--text-muted);
+    }
+
+    input,
+    textarea {
+      background: rgba(15, 23, 42, 0.9);
+      border-radius: 10px;
       border: 1px solid rgba(148, 163, 184, 0.6);
-      padding: 0.55rem 0.6rem; color: var(--text-main);
-      font-family: inherit; font-size: 0.82rem; outline: none;
+      padding: 0.55rem 0.6rem;
+      color: var(--text-main);
+      font-family: inherit;
+      font-size: 0.82rem;
+      outline: none;
     }
-    textarea { min-height: 80px; resize: vertical; }
-    input::placeholder, textarea::placeholder { color: rgba(148, 163, 184, 0.75); }
-    input:focus, textarea:focus {
+
+    textarea {
+      min-height: 80px;
+      resize: vertical;
+    }
+
+    input::placeholder,
+    textarea::placeholder {
+      color: rgba(148, 163, 184, 0.75);
+    }
+
+    input:focus,
+    textarea:focus {
       border-color: var(--accent);
       box-shadow: 0 0 0 1px rgba(56, 189, 248, 0.5);
     }
-    .contact-submit { margin-top: 0.4rem; }
-    .contact-hint { margin-top: 0.4rem; font-size: 0.73rem; color: var(--text-muted); }
+
+    .contact-submit {
+      margin-top: 0.4rem;
+    }
+
+    .contact-hint {
+      margin-top: 0.4rem;
+      font-size: 0.73rem;
+      color: var(--text-muted);
+    }
+
+    /* FOOTER */
     .footer {
       padding: 1.4rem 0 1.8rem;
       border-top: 1px solid rgba(15, 23, 42, 0.95);
-      font-size: 0.76rem; color: var(--text-muted);
+      font-size: 0.76rem;
+      color: var(--text-muted);
     }
+
     .footer-inner {
-      display: flex; flex-wrap: wrap; gap: 0.7rem;
-      align-items: center; justify-content: space-between;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.7rem;
+      align-items: center;
+      justify-content: space-between;
     }
-    .footer-links { display: flex; flex-wrap: wrap; gap: 0.7rem; }
-    .footer-links a { color: var(--text-muted); }
+
+    .footer-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.7rem;
+    }
+
+    .footer-links a {
+      color: var(--text-muted);
+    }
+
+    /* RESPONSIVE */
     @media (max-width: 880px) {
-      .hero-grid { grid-template-columns: minmax(0, 1fr); }
-      .hero { padding-top: 2.6rem; }
-      .hero-card { order: -1; }
-      .why-grid { grid-template-columns: minmax(0, 1fr); }
-      .contact-card { grid-template-columns: minmax(0, 1fr); }
+      .hero-grid {
+        grid-template-columns: minmax(0, 1fr);
+      }
+
+      .hero {
+        padding-top: 2.6rem;
+      }
+
+      .hero-card {
+        order: -1;
+      }
+
+      .why-grid {
+        grid-template-columns: minmax(0, 1fr);
+      }
+
+      .contact-card {
+        grid-template-columns: minmax(0, 1fr);
+      }
     }
+
     @media (max-width: 640px) {
-      .nav-inner { padding: 0.8rem 0; }
-      .nav-actions { display: none; }
-      .hero-actions { flex-direction: column; align-items: stretch; }
-      .btn { width: 100%; justify-content: center; }
-      .contact-form { grid-template-columns: minmax(0, 1fr); }
+      .nav-inner {
+        padding: 0.8rem 0;
+      }
+
+      .nav-actions {
+        display: none;
+      }
+
+      .hero-actions {
+        flex-direction: column;
+        align-items: stretch;
+      }
+
+      .btn {
+        width: 100%;
+        justify-content: center;
+      }
+
+      .contact-form {
+        grid-template-columns: minmax(0, 1fr);
+      }
     }
   </style>
 </head>
 <body>
   <div class="page">
+    <!-- NAV -->
     <header class="nav">
       <div class="container nav-inner">
         <div class="nav-brand">
@@ -324,6 +750,7 @@
       </div>
     </header>
 
+    <!-- HERO -->
     <main>
       <section class="hero" id="top">
         <div class="container hero-grid">
@@ -332,14 +759,17 @@
               <div class="hero-kicker-pill">⚕</div>
               <span>On-demand clinical workflow support & backup coverage</span>
             </div>
+
             <h1 class="hero-title">
               Flexible <span>on-site support</span><br />for busy clinics & med spas.
             </h1>
+
             <p class="hero-subtitle">
               We provide <strong>on-demand, pay-per-use support staff</strong> to help your team
               during busy hours, staff shortages, or planned time off. No hiring, no payroll
               burden — you only use us when you need additional hands.
             </p>
+
             <div class="hero-actions">
               <a href="#contact" class="btn btn-primary">
                 <span class="btn-icon">📝</span>
@@ -350,6 +780,7 @@
                 <span>Call Coordination Line: +1 (863) 250-7570</span>
               </a>
             </div>
+
             <div class="hero-footnote">
               <span>✓</span> Built for clinics that want
               <strong>flexible in-office assistance</strong> without adding full-time staff.
@@ -362,15 +793,18 @@
                 <div class="status-dot"></div>
                 <span>AI-Powered Coordination Line</span>
               </div>
+
               <div class="ai-title">24/7 automated intake for clinic coverage requests.</div>
               <div class="ai-sub">
                 Your staff can call once, leave details about support needed and timing, and we
                 handle the follow-up — no long email chains.
               </div>
+
               <div class="ai-line">
                 📞 <strong>Call now:</strong>
                 <a href="tel:+18632507570">+1 (863) 250-7570</a>
               </div>
+
               <div class="ai-meta">
                 <div class="ai-meta-item">
                   <div class="ai-meta-label">For clinics only</div>
@@ -381,6 +815,7 @@
                   <div class="ai-meta-value">24/7 voicemail-style AI assistant</div>
                 </div>
               </div>
+
               <div class="ai-tagline">
                 <span>⚡</span>
                 <span>Share your clinic name, support type & timing — we review and respond.</span>
@@ -390,6 +825,7 @@
         </div>
       </section>
 
+      <!-- WHY SECTION -->
       <section class="section" id="why">
         <div class="container">
           <div class="section-header">
@@ -400,6 +836,7 @@
               with recruiting, training, scheduling, and payroll for another employee.
             </p>
           </div>
+
           <div class="why-grid">
             <div>
               <div class="pill-list">
@@ -408,6 +845,7 @@
                 <div class="pill">Backup coverage when your team is out</div>
                 <div class="pill">Ideal for growing clinics & med spas</div>
               </div>
+
               <ul class="check-list">
                 <li>
                   <span class="check-icon">✔</span>
@@ -460,6 +898,7 @@
         </div>
       </section>
 
+      <!-- HOW IT WORKS -->
       <section class="section" id="how">
         <div class="container">
           <div class="section-header">
@@ -470,15 +909,16 @@
               under a minute.
             </p>
           </div>
+
           <div class="steps-grid">
             <div class="step-card">
               <div class="step-number">1</div>
               <div class="step-title">Clinic submits a request</div>
               <p class="step-text">
-                Call the coordination line or use the contact form with your preferred date, time
-                window, and type of assistance needed.
+                Call the coordination line or share your needs and timing using our contact options.
               </p>
             </div>
+
             <div class="step-card">
               <div class="step-number">2</div>
               <div class="step-title">We confirm availability</div>
@@ -487,6 +927,7 @@
                 slot.
               </p>
             </div>
+
             <div class="step-card">
               <div class="step-number">3</div>
               <div class="step-title">Support staff works inside your clinic</div>
@@ -495,6 +936,7 @@
                 clinic’s supervision and direction.
               </p>
             </div>
+
             <div class="step-card">
               <div class="step-number">4</div>
               <div class="step-title">You pay per completed shift</div>
@@ -507,14 +949,15 @@
         </div>
       </section>
 
+      <!-- CONTACT / REQUEST -->
       <section class="section" id="contact">
         <div class="container">
           <div class="section-header">
             <div class="section-kicker">Get in touch</div>
             <h2 class="section-title">Ready to explore flexible on-site support?</h2>
             <p class="section-description">
-              Use the coordination line for quick requests or share your details using the secure
-              contact form below. We’ll follow up to discuss next steps and availability.
+              Use the coordination line for quick requests or email us for non-urgent inquiries. We’ll
+              follow up to discuss next steps and availability.
             </p>
           </div>
 
@@ -557,87 +1000,19 @@
             </div>
 
             <div>
-              <div class="contact-intro-title">Option 2 — Secure contact form</div>
+              <div class="contact-intro-title">Option 2 — Email Contact</div>
               <p class="contact-intro-text">
-                Prefer email follow-up? Share a few details below and we’ll get back to you
-                promptly.
+                Prefer email follow-up? Reach out directly and we’ll get back to you promptly.
               </p>
 
-              <form class="contact-form">
-                <div class="form-field">
-                  <label for="clinicName">Clinic / Practice Name</label>
-                  <input
-                    type="text"
-                    id="clinicName"
-                    name="clinicName"
-                    placeholder="Example: South Beach Wellness Clinic"
-                    required
-                  />
-                </div>
-
-                <div class="form-field">
-                  <label for="contactName">Your Name</label>
-                  <input
-                    type="text"
-                    id="contactName"
-                    name="contactName"
-                    placeholder="Full name"
-                    required
-                  />
-                </div>
-
-                <div class="form-field">
-                  <label for="phone">Direct Phone</label>
-                  <input
-                    type="tel"
-                    id="phone"
-                    name="phone"
-                    placeholder="+1 (___) ___-____"
-                    required
-                  />
-                </div>
-
-                <div class="form-field">
-                  <label for="email">Work Email</label>
-                  <input
-                    type="email"
-                    id="email"
-                    name="email"
-                    placeholder="you@clinic.com"
-                    required
-                  />
-                </div>
-
-                <div class="form-field full">
-                  <label for="volume">How often do you expect to need support?</label>
-                  <input
-                    type="text"
-                    id="volume"
-                    name="volume"
-                    placeholder="E.g. a few times per week, only during busy seasons, etc."
-                  />
-                </div>
-
-                <div class="form-field full">
-                  <label for="message">Anything else we should know?</label>
-                  <textarea
-                    id="message"
-                    name="message"
-                    placeholder="Scheduling preferences, typical hours, or specific support needs."
-                  ></textarea>
-                </div>
-
-                <div class="form-field full contact-submit">
-                  <button type="submit" class="btn btn-primary">
-                    <span class="btn-icon">📨</span>
-                    <span>Submit request</span>
-                  </button>
-                </div>
-              </form>
+              <a href="mailto:phlebops@gmail.com" class="btn btn-primary">
+                <span class="btn-icon">📧</span>
+                <span>Email us instead</span>
+              </a>
 
               <div class="contact-hint">
-                We only use your details to respond to your inquiry about on-site support — no spam,
-                ever.
+                We reply promptly to all clinic inquiries at
+                <strong>phlebops@gmail.com</strong>.
               </div>
             </div>
           </div>
@@ -645,6 +1020,7 @@
       </section>
     </main>
 
+    <!-- FOOTER -->
     <footer class="footer">
       <div class="container footer-inner">
         <div>© <span id="year"></span> PhlebOps Clinical Support. All rights reserved.</div>
@@ -656,7 +1032,9 @@
       </div>
     </footer>
   </div>
+
   <script>
+    // Set current year in footer
     document.getElementById("year").textContent = new Date().getFullYear();
   </script>
 </body>
